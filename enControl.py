@@ -1,6 +1,7 @@
 #!flask/bin/python
 
 from flask import Flask, jsonify, abort, make_response, request
+
 import RPi.GPIO as GPIO
 import time
 
