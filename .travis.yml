@@ -8,6 +8,7 @@ install:
   - sudo pip install flake8
   - sudo pip install fake_rpi
   - sudo pip install RPi.GPIO
+  - sudo pip install pytest
 before_script:
   - sudo pip install -r requirements.txt
   # stop the build if there are Python syntax errors
@@ -16,4 +17,4 @@ before_script:
   # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 script:
-  - sudo python enControl-test.py
+  - pytest test_enControl.py
