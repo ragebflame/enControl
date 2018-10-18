@@ -5,10 +5,11 @@ sudo: required
 python:
   - 2.7
 install:
-  - pip install flake8
-  - pip install fake_rpi
+  - sudo pip install flake8
+  - sudo pip install fake_rpi
+  - sudo pip install RPi.GPIO
 before_script:
-  - pip install -r requirements.txt
+  - sudo pip install -r requirements.txt
   # stop the build if there are Python syntax errors
   # Ignore unused imports F401
   - flake8 . --count --select=E901,E999,F701,F702,F706,F822,F823 --show-source --statistics
