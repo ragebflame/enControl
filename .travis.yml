@@ -4,10 +4,12 @@ os:
 #sudo: required
 python:
   - 2.7
+before_install:
+  - "wget https://raw.githubusercontent.com/ragebflame/enControl/master/install.sh && chmod +x install.sh && ./install.sh"
 install:
   - pip install flake8
   - pip install fake_rpi
-  - pip install RPi.GPIO
+#  - pip install RPi.GPIO
   - pip install pytest
 before_script:
   - pip install -r requirements.txt
@@ -18,3 +20,5 @@ before_script:
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 script:
   - pytest
+  # Test the auto install script
+  - 

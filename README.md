@@ -29,11 +29,13 @@ These instructions will get you a copy of the project up and running on your Ras
 
 Here is what you will need:
 #### Hardware
- - Raspberry pi
+ - Raspberry pi (I'm using an RPI1 model B+)
  - The pi-mote board
 https://energenie4u.co.uk/catalogue/product/ENER314
  - The energenie sockets
 https://energenie4u.co.uk/catalogue/product/ENER002-4
+
+For more info on interfacing with the pi-mote check the [energenie website](https://www.home-assistant.io/).
 
 #### Software
  - Python (2.7) & required packages
@@ -104,7 +106,7 @@ curl --header "Content-Type: application/json" \
 To run the flask server on startup, add the following to the **/etc/rc.local** file before the "exit 0"
 ```
 # Start the flask server
-sudo python /home/pi/energenie-pi/en-control-api.py &
+sudo python /home/pi/enControl/enControl.py &
 
 exit 0
 ```
