@@ -52,19 +52,19 @@ wget https://raw.githubusercontent.com/ragebflame/enControl/master/install.sh &&
 ### Manual install
 For **Debian** based distros:
 ```
-$ sudo apt update && sudo apt upgrade -y
-$ sudo apt install git python pip
-$ git clone https://github.com/ragebflame/enControl
-$ cd enControl && sudo pip install -r requirements.txt
+sudo apt update && sudo apt upgrade -y
+sudo apt install git python pip
+git clone https://github.com/ragebflame/enControl
+cd enControl && sudo pip install -r requirements.txt
 ```
 
 ## Run
 ```
-$ sudo python enControl.py
+sudo python enControl.py
 ```
 server running:
 ```
-$ sudo python enControl.py
+sudo python enControl.py
  * Serving Flask app "enControl" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -85,7 +85,7 @@ Available `POST` requests
 
 Check API
 ```
-$ curl -i localhost/energenie-control/api/v1.0/gpio_pins
+curl -i localhost/energenie-control/api/v1.0/gpio_pins
 HTTP/1.0 200 OK
 Content-Type: application/json
 Content-Length: 25
