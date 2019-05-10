@@ -79,7 +79,7 @@ def post_command():
     if len(data_mapping) == 0:
         abort(500)
 
-    print data_mapping
+    print(data_mapping)
 
     # Send command to the switch
     trigger_switch(data_mapping)
@@ -114,12 +114,12 @@ def trigger_switch(data_mapping):
         time.sleep(0.25)  # keep enabled for a period
         GPIO.output(22, False)  # Disable the modulator
     except Exception:
-        print "Error trying to send the command. Exiting."
+        print("Error trying to send the command. Exiting.")
         abort(500)
 
     # Clean up the GPIOs for next time
     GPIO.cleanup()
-    print "Command sent sucessfully!"
+    print("Command sent sucessfully!")
 
 
 if __name__ == '__main__':

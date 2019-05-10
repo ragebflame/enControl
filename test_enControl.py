@@ -1,7 +1,7 @@
 import sys
 import fake_rpi
 import pytest
-# Replace libraries by fake ones
+# Replace libraries with fake ones for testing purposes
 sys.modules['RPi'] = fake_rpi.RPi  # Fake RPi (GPIO)
 sys.modules['RPi.GPIO'] = fake_rpi.RPi.GPIO  # Fake RPi (GPIO)
 
