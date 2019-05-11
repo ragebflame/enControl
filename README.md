@@ -116,6 +116,7 @@ exit 0
 - [x] Implement Travis-CI
 - [x] Re-factor code using Flake8 linter
 - [x] Add an auto-install script
+- [ ] Update the README to reflect Python3 installs on the RPI
 - [ ] Add Home assistant config
 - [ ] Expand unit test coverage
 - [ ] Add install steps for Arch based distros
