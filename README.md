@@ -41,7 +41,7 @@ Here is what you will need:
 - The energenie sockets
 <https://energenie4u.co.uk/catalogue/product/ENER002-4>
 
-For more info on interfacing with the pi-mote check the [energenie website](https://www.home-assistant.io/).
+For more info on interfacing with the pi-mote check the [energenie website (PDF)](https://energenie4u.co.uk/res/pdfs/ENER314%20UM.pdf).
 
 ### Software
 
