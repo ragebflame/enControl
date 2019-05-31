@@ -1,6 +1,8 @@
 import time
 from flask import abort
 import RPi.GPIO as GPIO
+
+
 # Function that sends the command to the pins
 def trigger_switch(data_mapping, parsed_switch_id):
     GPIO.setmode(GPIO.BOARD)  # set the pins numbering mode
@@ -25,4 +27,3 @@ def trigger_switch(data_mapping, parsed_switch_id):
     # Clean up the GPIOs for next time
     GPIO.cleanup()
     print("Command sent sucessfully for " + parsed_switch_id)
-    

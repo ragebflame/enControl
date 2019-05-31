@@ -11,7 +11,7 @@ echo "
 
 debian_install() {
     sudo apt update && sudo apt upgrade -y
-    sudo apt install git python pip
+    sudo apt install git python pip redis-server
 }
 
 python_setup() {

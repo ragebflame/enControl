@@ -1,10 +1,9 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, make_response, request
 from redis import Redis
-from rq import Queue, Worker, Connection
+from rq import Queue, Worker
 from switch_control import trigger_switch
-import RPi.GPIO as GPIO
-import time
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -45,9 +44,16 @@ gpio_values = {
 
 # Define the task Queue
 request_queue = Queue(connection=Redis())
+
+
+def start_worker():
+    worker = Worker(Queue(connection=Redis()), connection=Redis())
+    worker.work()
+
+
 # Define a worker
-worker = Worker(request_queue, connection=Redis())
-worker.work()
+w = Thread(target=start_worker)
+w.start()
 
 # Return the gpio_pins dictionary
 @app.route('/energenie-control/api/v1.0/gpio_pins', methods=['GET'])
@@ -90,7 +96,7 @@ def post_command():
     print(data_mapping)
 
     # Send command to the switch
-    #trigger_switch(data_mapping, parsed_switch_id)
+    # trigger_switch(data_mapping, parsed_switch_id)
 
     # Enqueue the function call instead
     request_queue.enqueue(trigger_switch, data_mapping, parsed_switch_id)
@@ -105,7 +111,6 @@ def not_found(error):
     return make_response(jsonify({
         'error': 'Not found'
         }), 404)
-
 
 
 if __name__ == '__main__':
