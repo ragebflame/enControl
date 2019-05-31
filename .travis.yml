@@ -9,6 +9,7 @@ python:
   - 3.5
 install:
   - pip install pytest
+  - pip install flake8
 before_script:
   - pip install -r requirements.txt
   # stop the build if there are Python syntax errors
