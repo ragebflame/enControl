@@ -3,7 +3,7 @@ from flask import Flask, jsonify, abort, make_response, request
 from redis import Redis
 from rq import Queue, Worker, Connection
 from switch_control import trigger_switch
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 
 app = Flask(__name__)
@@ -92,8 +92,7 @@ def post_command():
     # Send command to the switch
     #trigger_switch(data_mapping, parsed_switch_id)
 
-    # Enqueue the function call
-    #result = request_queue.Enqueue(trigger_switch, data_mapping, parsed_switch_id)
+    # Enqueue the function call instead
     request_queue.enqueue(trigger_switch, data_mapping, parsed_switch_id)
 
     # Return an OK
