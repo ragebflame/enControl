@@ -1,9 +1,8 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, make_response, request
 from redis import Redis
-from rq import Queue, Worker
+from rq import Queue
 from switch_control import trigger_switch
-from threading import Thread
 
 app = Flask(__name__)
 
@@ -44,16 +43,6 @@ gpio_values = {
 
 # Define the task Queue
 request_queue = Queue(connection=Redis())
-
-
-def start_worker():
-    worker = Worker(Queue(connection=Redis()), connection=Redis())
-    worker.work()
-
-
-# Define a worker
-w = Thread(target=start_worker)
-w.start()
 
 # Return the gpio_pins dictionary
 @app.route('/energenie-control/api/v1.0/gpio_pins', methods=['GET'])
