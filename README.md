@@ -24,11 +24,18 @@ This will allow you to turn sockets on & off with rest requests.
 
 **Updated -** Now using Redis in order to queue requests to the GPIO module.
 This is slightly slower, but prevents requests getting lost.
+(Currently in dev branch)
 
 ### Why you ask
 
 I had the hardware, and I needed an easy way to call the sockets from a
 [Home Assistant](https://www.home-assistant.io/) instance on a separate machine.
+
+### Why Redis also
+
+I have integrated Alexa with my Home assistant instance.
+These voice commands send requests all at once, So some request queueing
+was needed.
 
 ## Okay cool! let's get started
 
@@ -82,7 +89,7 @@ sudo nohup python3 /home/pi/enControl/enControl.py &
 sudo nohup python3 /home/pi/enControl/worker.py &
 ```
 
-server running:
+Server running:
 
 ```bash
 sudo python enControl.py
