@@ -1,8 +1,13 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, make_response, request
 from redis import Redis
-from rq import Queue
+from rq import Worker, Queue, Connection
 from switch_control import trigger_switch
+from threading import Thread
+import os
+# import worker
+
+os.system('sudo nohup python3 /home/pi/enControl/worker.py &')
 
 app = Flask(__name__)
 
@@ -43,6 +48,20 @@ gpio_values = {
 
 # Define the task Queue
 request_queue = Queue(connection=Redis())
+
+# Define the redis worker
+#def start_worker():
+#    listen = ['default']
+#    redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+#    conn = Redis.from_url(redis_url)
+#    with Connection(conn):
+#        worker = Worker(list(map(Queue, listen)))
+#        worker.work()
+
+
+# Start the worker in a new thread
+#w = Thread(target=start_worker)
+#w.start()
 
 # Return the gpio_pins dictionary
 @app.route('/energenie-control/api/v1.0/gpio_pins', methods=['GET'])

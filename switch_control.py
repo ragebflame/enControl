@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 # Function that sends the command to the pins
 def trigger_switch(data_mapping, parsed_switch_id):
     GPIO.setmode(GPIO.BOARD)  # set the pins numbering mode
-    time.sleep(0.25)
+    # time.sleep(0.25)
     # Select each of the GPIO pins needed
     needed_pins = [11, 15, 16, 13, 18, 22]
     data_pins = [11, 15, 16, 13]

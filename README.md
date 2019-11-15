@@ -22,20 +22,10 @@
 This is a Python script which interacts with an energenie pi-mote using a flask api.
 This will allow you to turn sockets on & off with rest requests.
 
-**Updated -** Now using Redis in order to queue requests to the GPIO module.
-This is slightly slower, but prevents requests getting lost.
-(Currently in dev branch)
-
 ### Why you ask
 
 I had the hardware, and I needed an easy way to call the sockets from a
 [Home Assistant](https://www.home-assistant.io/) instance on a separate machine.
-
-### Why Redis also
-
-I have integrated Alexa with my Home assistant instance.
-These voice commands send requests all at once, So some request queueing
-was needed.
 
 ## Okay cool! let's get started
 
@@ -57,7 +47,6 @@ For more info on interfacing with the pi-mote check the [energenie website (PDF)
 
 - Python (2.7 or 3.x) & required packages
 - flask
-- redis
 - RPi.GPIO
 
 ## Installation
@@ -83,13 +72,9 @@ cd enControl && sudo pip install -r requirements.txt
 
 ```bash
 sudo python enControl.py
-
-# For background operation
-sudo nohup python3 /home/pi/enControl/enControl.py &
-sudo nohup python3 /home/pi/enControl/worker.py &
 ```
 
-Server running:
+server running:
 
 ```bash
 sudo python enControl.py
@@ -142,9 +127,6 @@ file before the "exit 0"
 # Start the flask server - Python 2
 sudo python /home/pi/enControl/enControl.py &
 # Start the flask server - Python 3
-sudo nohup python3 /home/pi/enControl/enControl.py
-
-# And for the redis worker
 sudo nohup python3 /home/pi/enControl/enControl.py
 
 exit 0
