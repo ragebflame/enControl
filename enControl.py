@@ -53,7 +53,7 @@ def get_gpio_pins():
 @app.route('/energenie-control/api/v1.0/gpio_pins/<switch_id>', methods=['GET'])
 def get_switch(switch_id):
     switch = [switch for switch in gpio_values["switch"]
-              if switch["id"] == switch_id]
+                if switch["id"] == switch_id]
 
     if len(switch) == 0:
         abort(404)

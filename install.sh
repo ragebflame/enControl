@@ -22,9 +22,9 @@ python_setup() {
 }
 
 if grep -qEi 'debian|ubuntu|mint' /etc/*release
- then
-    debian_install
-    python_setup
+    then
+        debian_install
+        python_setup
 else
     echo "Only Debian based distros are supported at the moment."
 fi
