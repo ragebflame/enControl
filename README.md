@@ -1,5 +1,5 @@
 
-<center>
+<h4 align="center">
 
 ```text
 ____            _             _
@@ -10,7 +10,7 @@ ____            _             _
                                               |_|    |___/
 ```
 
-</center>
+</h4>
 
 <h4 align="center">Python flask API for controlling energenie pi-mote on raspberry pi</h4>
 
