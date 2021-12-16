@@ -14,7 +14,7 @@
   </a>
   <a href="https://github.com/ragebflame/enControl/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/Naereen/StrapDown.js.svg">
-  </a>  
+  </a>
 </p>
 
 ## What does this do
@@ -146,5 +146,5 @@ exit 0
 
 ## Contributing
 
-Why not open a Pull Request, or  
+Why not open a Pull Request, or
 [![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/6KqDHIdO4)
