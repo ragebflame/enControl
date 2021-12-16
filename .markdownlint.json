@@ -1,7 +1,7 @@
 {
     "default": true,
     "MD033": {
-      "allowed_elements": [ "h1", "h3", "h4", "p", "a", "img" ]
+      "allowed_elements": [ "h1", "h3", "h4", "p", "a", "img", "center" ]
     },
     "MD013": {
       "line_length": 90,

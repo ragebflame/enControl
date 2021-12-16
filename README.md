@@ -1,5 +1,17 @@
 
-<h1 align="center">enControl.py</h1>
+<center>
+
+```text
+____            _             _
+  ___ _ __  / ___|___  _ __ | |_ _ __ ___ | |  _ __  _   _
+ / _ \ '_ \| |   / _ \| '_ \| __| '__/ _ \| | | '_ \| | | |
+|  __/ | | | |__| (_) | | | | |_| | | (_) | |_| |_) | |_| |
+ \___|_| |_|\____\___/|_| |_|\__|_|  \___/|_(_) .__/ \__, |
+                                              |_|    |___/
+```
+
+</center>
+
 <h4 align="center">Python flask API for controlling energenie pi-mote on raspberry pi</h4>
 
 <p align="center">
@@ -146,5 +158,4 @@ exit 0
 
 ## Contributing
 
-Why not open a Pull Request, or
-[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/6KqDHIdO4)
+Pull Requests welcome.
